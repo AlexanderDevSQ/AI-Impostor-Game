@@ -5,7 +5,7 @@ export const ALL_WORDS: string[] = [
     'CASA', 'ESCUELA', 'HOSPITAL', 'RESTAURANTE', 'PARQUE', 'MUSEO',
     'RELOJ', 'ESPEJO', 'VENTANA', 'PUERTA', 'SILLA', 'MESA', 'CAMA',
     'TELEVISIÓN', 'RADIO', 'CÁMARA', 'PARAGUAS', 'GAFAS', 'ZAPATOS', 'RAYO',
-    'BAILEYS',
+    'BAILEYS', 'BOTELLA'
     'PERRO', 'GATO', 'LEÓN', 'TIGRE', 'ELEFANTE', 'JIRAFA', 'MONO',
     'DELFÍN', 'BALLENA', 'TIBURÓN', 'ÁGUILA', 'BÚHO', 'PINGÜINO',
     'CANGURO', 'OSO', 'LOBO', 'ZORRO', 'CONEJO', 'ARDILLA', 'CABALLO',
@@ -96,3 +96,4 @@ export function getRandomImpostorIndices(playerCount: number, impostorCount: num
     }
     return indices;
 }
+
