@@ -12,7 +12,6 @@ function App() {
     gameState,
     playerNames,
     setImpostorCount,
-    setCategory,
     addPlayer,
     removePlayer,
     updatePlayerName,
@@ -83,8 +82,6 @@ function App() {
         <HomeScreen
           impostorCount={gameState.impostorCount}
           setImpostorCount={setImpostorCount}
-          category={gameState.category}
-          setCategory={setCategory}
           onNext={() => goToPhase('NAMES')}
         />
       )}
@@ -114,7 +111,6 @@ function App() {
         <GameScreen
           players={gameState.players}
           impostorCount={gameState.impostorCount}
-          category={gameState.category}
           scores={gameState.scores}
           onVote={handleVote}
           onImpostorGuess={handleImpostorGuess}
