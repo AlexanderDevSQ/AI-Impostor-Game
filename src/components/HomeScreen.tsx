@@ -32,14 +32,17 @@ export function HomeScreen({ impostorCount, setImpostorCount, onNext }: HomeScre
             <label className="block text-sm font-semibold text-purple-200 mb-2">
               🎭 Número de Impostores
             </label>
-            <input 
-              type="number" 
-              min="1" 
-              max="5" 
+            <select
               value={impostorCount}
               onChange={(e) => setImpostorCount(parseInt(e.target.value) || 1)}
               className="w-full bg-white/10 border-2 border-pink-500/30 rounded-xl px-4 py-3 text-lg font-semibold focus:border-pink-500 focus:ring-4 focus:ring-pink-500/20 outline-none transition-all"
-            />
+            >
+              {Array.from({ length: 20 }, (_, i) => i + 1).map((count) => (
+                <option className="text-black" key={count} value={count}>
+                  {count}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 

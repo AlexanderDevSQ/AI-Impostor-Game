@@ -29,7 +29,7 @@ export function useGameLogic() {
   }, []);
 
   const setImpostorCount = (count: number) => {
-    setGameState(prev => ({ ...prev, impostorCount: Math.max(1, Math.min(5, count)) }));
+    setGameState(prev => ({ ...prev, impostorCount: Math.max(1, Math.min(20, count)) }));
   };
 
   const addPlayer = () => {
