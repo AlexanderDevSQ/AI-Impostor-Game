@@ -20,7 +20,8 @@ function App() {
     votePlayer,
     impostorGuess,
     resetGame,
-    goToPhase
+    goToPhase,
+    setSelectedCategories
   } = useGameLogic();
 
   const [modalState, setModalState] = useState<{
@@ -82,6 +83,8 @@ function App() {
         <HomeScreen
           impostorCount={gameState.impostorCount}
           setImpostorCount={setImpostorCount}
+          selectedCategories={gameState.selectedCategories}
+          setSelectedCategories={setSelectedCategories}
           onNext={() => goToPhase('NAMES')}
         />
       )}

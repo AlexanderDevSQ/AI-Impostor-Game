@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import type { GameState, Player, GamePhase } from '../types';
-import { getRandomWord, getRandomImpostorIndices } from '../utils/words';
+import { getRandomWord, getRandomImpostorIndices, getAllCategories } from '../utils/words';
 
 const INITIAL_STATE: GameState = {
   players: [],
   impostorCount: 1,
+  selectedCategories: getAllCategories(),
   currentPhase: 'HOME',
   currentPlayerIndex: 0,
   secretWord: '',
@@ -30,6 +31,10 @@ export function useGameLogic() {
 
   const setImpostorCount = (count: number) => {
     setGameState(prev => ({ ...prev, impostorCount: Math.max(1, Math.min(20, count)) }));
+  };
+
+  const setSelectedCategories = (categories: string[]) => {
+    setGameState(prev => ({ ...prev, selectedCategories: categories }));
   };
 
   const addPlayer = () => {
@@ -66,7 +71,7 @@ export function useGameLogic() {
       newPlayers[idx].isImpostor = true;
     });
 
-    const secretWord = getRandomWord();
+    const secretWord = getRandomWord(gameState.selectedCategories);
 
     setGameState(prev => ({
       ...prev,
@@ -145,6 +150,7 @@ export function useGameLogic() {
     votePlayer,
     impostorGuess,
     resetGame,
-    goToPhase
+    goToPhase,
+    setSelectedCategories
   };
 }
